@@ -22,6 +22,5 @@ if ! $(which tmignore &>/dev/null); then
     (crontab -l 2>/dev/null; echo "$cron_entry") | \
         crontab -
     fi
-else
-    echo "✅\033[32m installers/tmignore installed\033[0m"
 fi
+echo "✅\033[32m installers/tmignore installed\033[0m"
