@@ -11,7 +11,7 @@
 #         sleep 5
 #     done
 # fi
-
+echo "✅\033[32m git global config...\033[0m"
 echo "# .gitignore_global
 ####################################
 ######## OS generated files ########
