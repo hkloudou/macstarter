@@ -5,14 +5,15 @@
 ###############################################################################
 
 # Install Xcode Command Line Tools
+echo "\033[33m please install xcode⚠️ \033[0m"
 if ! $(xcode-select -p &>/dev/null); then
-    echo "please install xcode"
+    echo "⚠️\033[33m please install xcode \033[0m"
     # Wait until the Xcode Command Line Tools are installed
     until $(xcode-select -p &>/dev/null); do
         sleep 5
     done
 fi
-echo "xocde installed"
+echo "✅\033[32m xocde installed\033[0m"
 
 # Accept the Xcode/iOS license agreement
 if ! $(sudo xcodebuild -license status); then
