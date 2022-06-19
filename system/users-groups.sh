@@ -5,7 +5,7 @@
 ###############################################################################
 echo "\033[32mUsers & Groups...\033[0m"
 
-pwpolicy -clearaccountpolicies
+sudo pwpolicy -clearaccountpolicies
 
 # Display login window as: Name and password
 sudo defaults write /Library/Preferences/com.apple.loginwindow "SHOWFULLNAME" -bool true
