@@ -17,3 +17,14 @@ export HOMEBREW_CORE_GIT_REMOTE=\"https://mirrors.tuna.tsinghua.edu.cn/git/homeb
 alias p=\"export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890\"
 " > $pt;
 done
+
+# if [[ -z $(echo $PATH | grep /usr/local/go/bin) ]]; then
+#     for pt in ~/.zprofile ~/.profile ~/.bash_profile; 
+#     do  
+#     test -r $pt && echo "export PATH=\$PATH:`echo ~`/go/bin" >> $pt;
+#     done
+# fi
+
+# if [[ -z $(echo $PATH | grep /usr/local/go/bin) ]]; then
+#     echo 'export PATH=$PATH:/usr/local/go/bin' >>$profile_path
+# fi

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# Xcode
+# ClashX
 ###############################################################################
 hdiutil detach /Volumes/ClashX &>/dev/null
 if [ ! -d "/Applications/ClashX.app/" ]; then
