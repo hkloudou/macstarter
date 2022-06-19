@@ -6,7 +6,7 @@
 
 
 if ! $(which tmignore &>/dev/null); then
-    echo "\033[32minstall tmignore...\033[0m"
+    echo "\033[32 installers/ install...\033[0m"
     mkdir -p /usr/local
     mkdir -p /usr/local/bin
     curl -sSL https://github.com/hkloudou/tmignore/releases/download/v1.2.13/tmignore >/usr/local/bin/tmignore
@@ -23,5 +23,5 @@ if ! $(which tmignore &>/dev/null); then
         crontab -
     fi
 else
-    echo "✅\033[32m tmignore installed\033[0m"
+    echo "✅\033[32m installers/tmignore installed\033[0m"
 fi

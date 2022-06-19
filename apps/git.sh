@@ -30,4 +30,4 @@ bower_components/
 node_modules/
 " >~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
-echo "✅\033[32m git global config\033[0m"
+echo "✅\033[32m apps/git global config\033[0m"
