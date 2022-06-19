@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 # . ../utils/color.sh
 ###############################################################################
 # Golang
 ###############################################################################
 
 # cancel centos alias
-source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 can_google=1
 
 force_mode=0
