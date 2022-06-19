@@ -102,11 +102,9 @@ install_go() {
         }
         yellow $0 latest $install_version
     fi
-    # yellow $force_mode
     if [[ $force_mode == 0 && $(command -v $GOBIN) ]]; then
-        # red 111
         if [ $($GOBIN version | awk '{print $3}' | grep -Eo "[0-9.]+") == $install_version ]; then
-            green $0 already
+            # green $0 already
             return
         fi
     fi
@@ -124,10 +122,10 @@ install_go() {
             exit 1
         }
     fi
-    echo "⚠️\033[33m $0 please input sudo pwd to accept license \033[0m"
+    yellow ⚠️ $0 please input sudo pwd to accept license
     sudo installer -pkg $temp_path/$file_name -target /
     [[ $? != 0 ]] && {
-        yellow "install error!"
+        yellow $0 "install error!"
         rm -rf $temp_path/$file_name
         exit 1
     }
@@ -158,7 +156,7 @@ main() {
     # setup_env
     # setup_proxy
     # install_updater
-    green $0 $install_version installed!
+    green ✅ $0 $install_version installed!
 }
 
 main
