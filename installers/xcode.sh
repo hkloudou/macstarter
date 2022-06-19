@@ -6,13 +6,13 @@
 
 # Install Xcode Command Line Tools
 if ! $(xcode-select -p &>/dev/null); then
-    xcode-select --install &>/dev/null
-
+    echo "please install xcode"
     # Wait until the Xcode Command Line Tools are installed
     until $(xcode-select -p &>/dev/null); do
         sleep 5
     done
 fi
+echo "xocde installed"
 
 # Accept the Xcode/iOS license agreement
 if ! $(sudo xcodebuild -license status); then
@@ -20,7 +20,7 @@ if ! $(sudo xcodebuild -license status); then
 fi
 
 # Install additional required components
-# /Applications/Xcode.app/Contents/MacOS/Xcode -installComponents
-for pkg in /Applications/Xcode.app/Contents/Resources/Packages/*.pkg; do
-    sudo installer -pkg "$pkg" -target /
-done
+# # /Applications/Xcode.app/Contents/MacOS/Xcode -installComponents
+# for pkg in /Applications/Xcode.app/Contents/Resources/Packages/*.pkg; do
+#     sudo installer -pkg "$pkg" -target /
+# done
