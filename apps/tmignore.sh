@@ -7,7 +7,7 @@ echo "\033[32mConfig tmignore...\033[0m"
 
 mkdir -p /usr/local
 mkdir -p /usr/local/bin
-curl -L https://github.com/hkloudou/tmignore/releases/download/v1.2.13/tmignore >/usr/local/bin/tmignore
+curl -sL https://github.com/hkloudou/tmignore/releases/download/v1.2.13/tmignore >/usr/local/bin/tmignore
 chmod u+x /usr/local/bin/tmignore
 
 mkdir -p ~/.config/tmignore/

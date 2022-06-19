@@ -5,7 +5,6 @@
 ###############################################################################
 
 # Install Xcode Command Line Tools
-echo "\033[33m please install xcode⚠️ \033[0m"
 if ! $(xcode-select -p &>/dev/null); then
     echo "⚠️\033[33m please install xcode \033[0m"
     # Wait until the Xcode Command Line Tools are installed
