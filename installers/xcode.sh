@@ -17,6 +17,7 @@ echo "✅\033[32m xocde installed\033[0m"
 
 # Accept the Xcode/iOS license agreement
 if ! $(xcodebuild -license status); then
+    echo "⚠️\033[33m please input sudo pwd to accept license \033[0m"
     sudo xcodebuild -license accept
 fi
 
