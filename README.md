@@ -3,11 +3,11 @@
 - [x] Flutter
 - [x] Go
 - [x] Xcode
-- [x] Android Studio
-- [x] SourceTree
-- [x] VScode
+- [ ] Android Studio
+- [ ] SourceTree
+- [ ] VScode
 - [x] ClashX
-- [x] Chrome
+- [ ] Chrome
 
 ## tools
-- [x] brew
+- [ ] brew
