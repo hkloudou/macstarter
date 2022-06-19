@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 ###############################################################################
 # ClashX
 ###############################################################################
@@ -10,5 +10,5 @@ if [ ! -d "/Applications/ClashX.app/" ]; then
         xattr -c /Applications/ClashX.app &&
         hdiutil detach /Volumes/ClashX
 fi
-echo "✅\033[32m installers/ClashX installed\033[0m"
+green ✅ $0 installed
 # read -n 1 -s -r -p "Press any key to continue"

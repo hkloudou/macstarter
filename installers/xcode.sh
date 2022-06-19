@@ -1,22 +1,21 @@
 #!/usr/bin/env bash
-
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 ###############################################################################
 # Xcode
 ###############################################################################
 
 # Install Xcode Command Line Tools
 if ! $(xcode-select -p &>/dev/null); then
-    echo "⚠️\033[33m installers/xocde please install \033[0m"
+    yellow ⚠️ $0 please install
     # Wait until the Xcode Command Line Tools are installed
     until $(xcode-select -p &>/dev/null); do
         sleep 5
     done
 fi
-echo "✅\033[32m installers/xocde installed\033[0m"
-
+green ✅ $0 installed
 # Accept the Xcode/iOS license agreement
 if ! $(xcodebuild -license status); then
-    echo "⚠️\033[33m please input sudo pwd to accept license \033[0m"
+    yellow ⚠️ $0 please input sudo pwd to accept license
     sudo xcodebuild -license accept
 fi
 
