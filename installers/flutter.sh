@@ -11,4 +11,7 @@ if [ ! -d "$HOME/Developments/flutter" ]; then
     mkdir -p ~/Developments/flutter
     curl -SL https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.2-stable.zip | bsdtar --strip-components 1 -xf - -C ~/Developments/flutter
 fi
+
+# export PATH=\$PATH:`echo ~`/Developments/flutter/bin
+write_bash_profile "export PATH=\$PATH:$HOME/Developments/flutter/bin"
 green ✅ $0 installed

@@ -32,3 +32,13 @@ yellow() {
 warn() {
     echo "\033[33m$@\033[0m"
 }
+
+write_bash_profile() {
+    for pt in ~/.zprofile ~/.profile ~/.bash_profile; do
+        if test -r $pt && ! cat $pt | fgrep "$@" >/dev/null; then
+            (
+                test -r $pt && echo $@ >>$pt && blue $0 $@
+            )
+        fi
+    done
+}

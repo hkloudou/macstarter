@@ -153,6 +153,7 @@ main() {
     sys_arch
     check_network
     install_go
+    write_bash_profile "export PATH=\$PATH:$HOME/go/bin"
     # setup_env
     # setup_proxy
     # install_updater
