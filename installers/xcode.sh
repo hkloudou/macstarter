@@ -18,7 +18,7 @@ install_xcode() {
             exit 1
         }
         echo $temp_path
-        hdiutil attach $temp_path/Xcode_13.2.1.xip
+        # hdiutil attach $temp_path/Xcode_13.2.1.xip
         # https://download.developer.apple.com/Developer_Tools/Xcode_13.2.1/Xcode_13.2.1.xip
         # https://download.developer.apple.com/Developer_Tools/Xcode_13.2/Xcode_13.2.xip
         #
