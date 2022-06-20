@@ -114,11 +114,11 @@ install_go() {
     curl -H 'Cache-Control: no-cache' -L https://dl.google.com/go/$file_name -o $temp_path/$file_name
     if [[ $? != 0 ]]; then
         yellow $0 "download error, retrying!"
-        rm -rf $file_name
+        rm -rf $temp_path
         curl -H 'Cache-Control: no-cache' -L https://dl.google.com/go/$file_name -o $temp_path/$file_name
         [[ $? != 0 ]] && {
             yellow $0 "download error!"
-            rm -rf $temp_path/$file_name
+            rm -rf $temp_path
             exit 1
         }
     fi
