@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 
 ###############################################################################
 # Screenshot
 ###############################################################################
-
 
 if ! $(which tmignore &>/dev/null); then
     echo "\033[32 installers/ install...\033[0m"
@@ -19,8 +19,11 @@ if ! $(which tmignore &>/dev/null); then
     # Schedule tmignore run
     cron_entry='0 */1 * * * /usr/local/bin/tmignore run &>/dev/null'
     if ! crontab -l | fgrep "$cron_entry" >/dev/null; then
-    (crontab -l 2>/dev/null; echo "$cron_entry") | \
-        crontab -
+        (
+            crontab -l 2>/dev/null
+            echo "$cron_entry"
+        ) |
+            crontab -
     fi
 fi
-echo "✅\033[32m installers/tmignore installed\033[0m"
+green ✅ $0 installed
