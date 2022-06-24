@@ -9,7 +9,7 @@ if [ ! -d "$HOME/Developments/flutter" ]; then
     green $ installing...
     mkdir -p ~/Developments
     mkdir -p ~/Developments/flutter
-    curl -SL https://storage.flutter-io.cn/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.2-stable.zip | bsdtar --strip-components 1 -xf - -C ~/Developments/flutter
+    curl -SL https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_3.0.3-stable.zip | bsdtar --strip-components 1 -xf - -C ~/Developments/flutter
 fi
 
 # export PATH=\$PATH:`echo ~`/Developments/flutter/bin

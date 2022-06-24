@@ -10,5 +10,6 @@ if [ ! -d "/Applications/ClashX.app/" ]; then
         xattr -c /Applications/ClashX.app &&
         hdiutil detach /Volumes/ClashX
 fi
+write_bash_profile "alias p=\"export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890\""
 green ✅ $0 installed
 # read -n 1 -s -r -p "Press any key to continue"

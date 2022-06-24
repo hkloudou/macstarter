@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 
 ###############################################################################
 # Git
@@ -30,4 +31,8 @@ bower_components/
 node_modules/
 " >~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
-echo "✅\033[32m apps/git global config\033[0m"
+
+git config --global user.name "sample"
+git config --global user.email "sample@example.com"
+
+green ✅ $0

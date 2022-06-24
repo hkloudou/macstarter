@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 
 ###############################################################################
 # Finder
 # https://github.com/joeyhoer/starter/tree/master/apps
 # rm ~/Library/Preferences/com.apple.finder.plist
 ###############################################################################
-echo "\033[32mFinder...\033[0m"
+# echo "\033[32mFinder...\033[0m"
 
 # Quitting via ⌘ + Q; doing so will also hide desktop icons
 defaults write com.apple.finder QuitMenuItem -bool true
@@ -26,7 +27,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Status bar
-defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowStatusBar -bool false
 
 # Path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -73,3 +74,5 @@ defaults write com.apple.finder CreateDesktop -bool false
 #     OpenWith -bool true \
 #     Privileges -bool true
 killall Finder
+
+green ✅ $0

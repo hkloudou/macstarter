@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 
 ###############################################################################
 # Screenshot
 ###############################################################################
-echo "\033[32mScreenshot...\033[0m"
 
 # Screenshot location
-mkdir -p $HOME/Screenshots
+mkdir -p $HOME/Pictures/Screenshots
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 
+
+green ✅ $0
 # Base name of screenshots
 # defaults write com.apple.screencapture name -string "screen"
 

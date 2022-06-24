@@ -157,6 +157,8 @@ main() {
     # setup_env
     # setup_proxy
     # install_updater
+    git config --global url."git@code.aliyun.com:".insteadOf "https://code.aliyun.com/"
+    go env -w GOPRIVATE=code.aliyun.com
     green ✅ $0 $install_version installed!
 }
 
