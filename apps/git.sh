@@ -27,8 +27,8 @@ ehthumbs.db
 Thumbs.db
 
 # node
-bower_components/
-node_modules/
+# bower_components/
+# node_modules/
 " >~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
