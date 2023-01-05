@@ -28,8 +28,10 @@ IG_APP=($IG_APP_XCODE $IG_APP_ANDROID)
 
 IG_CACHE_DEV=("$U/.cache" "$U/.npm" "$U/.node-gpy" "$U/.gradle" "$U/.dartserver" "$U/.pub-cache")
 IG_CACHE_APP=("$CT1/com.apple.Safari/Data/Library/Caches" "$U/Library/Caches/com.apple.dt.Xcode")
-IG_CACHE=($IG_CACHE_DEV $IG_CACHE_APP)
-echo $IG_SYSTEM $IG_APP $IG_CACHE $IG_Containners "`go env GOMODCACHE`" "`go env GOCACHE`"
-sudo tmutil addexclusion -p $IG_SYSTEM $IG_APP $IG_CACHE $IG_Containners "`go env GOMODCACHE`" "`go env GOCACHE`"
+IG_CACHE=(${IG_CACHE_DEV[@]} ${IG_CACHE_APP[@]})
+echo "IG_CACHE"
+echo ${IG_CACHE[@]}
+# echo $IG_SYSTEM $IG_APP $IG_CACHE $IG_Containners "`go env GOMODCACHE`" "`go env GOCACHE`"
+sudo tmutil addexclusion -p ${IG_SYSTEM[@]} ${IG_APP[@]} ${IG_CACHE[@]} ${IG_Containners[@]} "`go env GOMODCACHE`" "`go env GOCACHE`"
 
 green ✅ $0
