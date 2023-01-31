@@ -27,6 +27,7 @@ ACTION=addexclusion
 if [ "$1" = "del" ]
 then
     ACTION=removeexclusion
+    yellow ⚠️ 删除
 fi
 IG_USER=(
     ".Trash"
@@ -104,32 +105,33 @@ IG_USER_APPS=(
     #IOS
     "抖音"
     "百度网盘HD"
-    "Mi Home"
+    'Mi Home'
     "中国电信"
     "携程旅行"
     "微信听书"
-    "微信读书"   
+    "微信读书"
 )
 
-for files in ${IG_USER_CONTAINS[@]}
-    do sudo tmutil $ACTION -p ~/Library/Containers/$files
+for files in "${IG_USER_CONTAINS[@]}"
+    do sudo tmutil $ACTION -p "~/Library/Containers/$files"
 done
-for files in ${IG_USER_CONTAINS[@]}
-    do tmutil isexcluded ~/Library/Containers/$files
-done
-
-for files in ${IG_USER[@]}
-    do sudo tmutil $ACTION -p ~/$files
-done
-for files in ${IG_USER[@]}
-    do tmutil isexcluded ~/$files
+for files in "${IG_USER_CONTAINS[@]}"
+    do tmutil isexcluded "~/Library/Containers/$files"
 done
 
-for files in ${IG_USER_APPS[@]}
+for files in "${IG_USER[@]}"
+    do sudo tmutil $ACTION -p "~/$files"
+done
+for files in "${IG_USER[@]}"
+    do tmutil isexcluded "~/$files"
+done
+
+for files in "${IG_USER_APPS[@]}"
     do sudo tmutil $ACTION -p "/Applications/$files.app" && sudo tmutil $ACTION -p "/Applications/$files.appdownload"
 done
-for files in ${IG_USER_APPS[@]}
-    do tmutil isexcluded "/Applications/$files.app"
+for files in "${IG_USER_APPS[@]}"
+    # echo "/Applications/$files.app"
+    do tmutil isexcluded "/Applications/${files}.app"
 done
 
 sudo tmutil $ACTION -p "`go env GOMODCACHE`" "`go env GOCACHE`"
