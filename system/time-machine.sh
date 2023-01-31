@@ -32,12 +32,17 @@ source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 #     yellow ⚠️ 删除
 # 
 set "$@" $(find ~ -name "Google *" -mindepth 1 -maxdepth 1) # Google Drive
-set "$@" ~/git # store on github/etc :)
-set "$@" ~/node_modules
+# set "$@" ~/git # store on github/etc :)
+# set "$@" ~/node_modules
+
+
+set "$@" ~/Library/Application\ Support ~/Library/Caches ~/Library/Containers ~/Library/Google ~/Library/Internet\ Plug-Ins ~/Library/LaunchAgents ~/Library/Logs ~/Library/Mail ~/Library/Messages ~/Library/Mail ~/Library/Metadata ~/Library/QuickLook ~/Library/Safari ~/Library/Saved\ Application\ State ~/Library/Screen\ Savers ~/Library/Sharing ~/Library/Suggestions
 
 # 系统
-set "$@" /var/db/diagnostics /var/db/folders /var/db/uuidtext /var/db/vm /var/log /var/tmp
+set "$@" /opt # MacPorts
+set "$@" /vm  # swapfile
 
+set "$@" /private/var/db/oah /private/var/db/diagnostics /private/var/db/folders /private/var/db/uuidtext /private/var/db/vm /private/var/log /private/var/tmp
 
 
 set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle
