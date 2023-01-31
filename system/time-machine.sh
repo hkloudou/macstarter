@@ -49,6 +49,10 @@ set "$@" ~/Library/Application\ Support/Caches
 set "$@" ~/Library/Application\ Support/listen1
 
 set "$@" ~/Library/Group\ Containers/5A4RE8SF68.com.tencent.xinWeChat/Library/Caches    #微信小程序缓存
+set "$@" ~/Library/Group\ Containers/6N38VWS5BX.ru.keepcoder.Telegram ~/Library/Group\ Containers/6N38VWS5BX.ru.keepcoder.Telegram.TelegramShare    #telegram
+set "$@" ~/Library/Group\ Containers/243LU875E5.groups.com.apple.podcasts               #podcasts
+
+
 # set "$@" ~/Library/Containers/com.tencent.WeWorkMac    #企业微信，貌似没有备份的必要性
 
 set "$@" ~/Library/Application\ Support/com.apple.mobileAssetDesktop #壁纸
@@ -68,6 +72,7 @@ IG_USER_CONTAINS=(
     "com.docker.docker"                     #docker
     "ru.keepcoder.Telegram"                 #telegram
     "com.tencent.WeWorkMac"                 #企业微信
+    "com.apple.freeform"                    #freeform，完全没必要备份，自动同步icloud 就好
     "com.apple.podcasts"
     "com.apple.podcasts.widget"
     "com.apple.podcasts.MacPodcastsStorageExtension"
