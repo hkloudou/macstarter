@@ -107,6 +107,8 @@ IG_USER_APPS=(
     "Mi Home"
     "中国电信"
     "携程旅行"
+    "微信听书"
+    "微信读书"   
 )
 
 for files in ${IG_USER_CONTAINS[@]}
