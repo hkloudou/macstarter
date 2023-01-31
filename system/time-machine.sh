@@ -20,7 +20,14 @@ source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 # IG_APP=($IG_APP_XCODE $IG_APP_ANDROID)
 
 # IG_CACHE_DEV=("$U/.cache" "$U/.npm" "$U/.node-gpy" "$U/.gradle" "$U/.dartserver" "$U/.pub-cache")
-
+# -n 名称
+# -a 作者
+# -h 帮助
+ACTION=addexclusion
+if [ "$1" = "del" ]
+then
+    ACTION=removeexclusion
+fi
 IG_USER=(
     ".Trash"
     ".cache"
@@ -44,6 +51,9 @@ IG_USER=(
     "Library/Caches"
     "Library/Caches/go-build"
     "Library/Caches/com.apple.dt.Xcode" #cache
+    
+    "Library/Application Support/Caches"
+    "Library/Application Support/listen1"
 )
 
 IG_USER_CONTAINS=(
@@ -70,36 +80,56 @@ IG_USER_CONTAINS=(
     "com.apple.Safari/Data/Library/Caches"  #safari cache
 )
 IG_USER_APPS=(
-    "Xcode"
+    #手工安装    
     "Docker"
-    "企业微信"
-    "抖音"
+    "Visual Studio Code"
+    "BaiduNetdisk_mac"
+    
+    #系统轻易下载到
+    "Xcode"
+
+    "Keynote"
+    "Pages"
+    "Numbers"
+
+    "Apifox"
+    "Xmind"
+
+    #应用轻易下载到
     "爱奇艺"
-    "百度网盘HD"
     "QQLive"
+    "WeChat"
+    "企业微信"
+
+    #IOS
+    "抖音"
+    "百度网盘HD"
+    "Mi Home"
+    "中国电信"
+    "携程旅行"
 )
 
 for files in ${IG_USER_CONTAINS[@]}
-    do sudo tmutil addexclusion -p ~/Library/Containers/$files
+    do sudo tmutil $ACTION -p ~/Library/Containers/$files
 done
 for files in ${IG_USER_CONTAINS[@]}
     do tmutil isexcluded ~/Library/Containers/$files
 done
 
 for files in ${IG_USER[@]}
-    do sudo tmutil addexclusion -p ~/$files
+    do sudo tmutil $ACTION -p ~/$files
 done
 for files in ${IG_USER[@]}
     do tmutil isexcluded ~/$files
 done
 
-for files in ${IG_CACHE_APP[@]}
-    do sudo tmutil addexclusion -p /Applications/$files.app && sudo tmutil addexclusion -p /Applications/$files.appdownload
+for files in ${IG_USER_APPS[@]}
+    do sudo tmutil $ACTION -p "/Applications/$files.app" && sudo tmutil $ACTION -p "/Applications/$files.appdownload"
 done
-for files in ${IG_CACHE_APP[@]}
-    do tmutil isexcluded /Applications/$files.app
+for files in ${IG_USER_APPS[@]}
+    do tmutil isexcluded "/Applications/$files.app"
 done
 
-sudo tmutil addexclusion -p "`go env GOMODCACHE`" "`go env GOCACHE`"
+sudo tmutil $ACTION -p "`go env GOMODCACHE`" "`go env GOCACHE`"
 tmutil isexcluded "`go env GOMODCACHE`" "`go env GOCACHE`"
 green ✅ $0
