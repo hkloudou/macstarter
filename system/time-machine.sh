@@ -30,7 +30,16 @@ source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 # then
 #     ACTION=removeexclusion
 #     yellow ⚠️ 删除
-# fi
+# 
+set "$@" $(find ~ -name "Google *" -mindepth 1 -maxdepth 1) # Google Drive
+set "$@" ~/git # store on github/etc :)
+set "$@" ~/node_modules
+
+# 系统
+set "$@" /var/db/diagnostics /var/db/folders /var/db/uuidtext /var/db/vm /var/log /var/tmp
+
+
+
 set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle
 set "$@" ~/Developments ~/Desktop ~/Downloads ~/Movies ~/Music ~/Pictures
 set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
@@ -38,6 +47,13 @@ set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
 set "$@" ~/Library/Caches
 set "$@" ~/Library/Application\ Support/Caches
 set "$@" ~/Library/Application\ Support/listen1
+
+set "$@" ~/Library/Group\ Containers/5A4RE8SF68.com.tencent.xinWeChat/Library/Caches    #微信小程序缓存
+# set "$@" ~/Library/Containers/com.tencent.WeWorkMac    #企业微信，貌似没有备份的必要性
+
+set "$@" ~/Library/Application\ Support/com.apple.mobileAssetDesktop #壁纸
+set "$@" ~/Library/Application\ Support/Steam #这玩意，真的可以不要
+set "$@" ~/Library/Application\ Support/Code #Code，自己通过自动同步来搞吧
 
 IG_USER_CONTAINS=(
     "9AD17523-F3E4-423A-A5CF-077998D376BF"  #百度HD
@@ -51,6 +67,7 @@ IG_USER_CONTAINS=(
     "com.iqiyi.player"                      #爱奇艺
     "com.docker.docker"                     #docker
     "ru.keepcoder.Telegram"                 #telegram
+    "com.tencent.WeWorkMac"                 #企业微信
     "com.apple.podcasts"
     "com.apple.podcasts.widget"
     "com.apple.podcasts.MacPodcastsStorageExtension"
@@ -129,3 +146,5 @@ killall cfprefsd;:
 # tmutil isexcluded "`go env GOMODCACHE`" "`go env GOCACHE`"
 green ✅ $0
 defaults read /Library/Preferences/com.apple.TimeMachine SkipPaths
+
+# du -d 1 -h | sort -rh
