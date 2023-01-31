@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
+{ set +x; } 2>/dev/null
 
+IFS=$'\n'
+source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 
 ###############################################################################
 # Time Machine
@@ -23,39 +25,19 @@ source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 # -n 名称
 # -a 作者
 # -h 帮助
-ACTION=addexclusion
-if [ "$1" = "del" ]
-then
-    ACTION=removeexclusion
-    yellow ⚠️ 删除
-fi
-IG_USER=(
-    ".Trash"
-    ".cache"
-    ".npm"
-    ".node-gpy"
-    ".dartserver"
-    ".pub-cache"
-    ".gradle"
+# ACTION=addexclusion
+# if [ "$1" = "del" ]
+# then
+#     ACTION=removeexclusion
+#     yellow ⚠️ 删除
+# fi
+set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle
+set "$@" ~/Developments ~/Desktop ~/Downloads ~/Movies ~/Music ~/Pictures
+set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
 
-    "Developments"
-    "Downloads"
-    "Pictures"
-    "Music"
-    "Movies"
-    
-
-    "Library/Android"
-    "Library/Developer/Xcode"           #这里大概率没有意义的东西
-    "Library/Developer/CoreSimulator"   #模拟器，就不备份吧
-
-    "Library/Caches"
-    "Library/Caches/go-build"
-    "Library/Caches/com.apple.dt.Xcode" #cache
-    
-    "Library/Application Support/Caches"
-    "Library/Application Support/listen1"
-)
+set "$@" ~/Library/Caches
+set "$@" ~/Library/Application\ Support/Caches
+set "$@" ~/Library/Application\ Support/listen1
 
 IG_USER_CONTAINS=(
     "9AD17523-F3E4-423A-A5CF-077998D376BF"  #百度HD
@@ -111,29 +93,83 @@ IG_USER_APPS=(
     "微信听书"
     "微信读书"
 )
-
+# # IG=("")
+# for files in "${IG_USER[@]}"
+#     do set "$@" ~/$files
+# done
 for files in "${IG_USER_CONTAINS[@]}"
-    do sudo tmutil $ACTION -p "~/Library/Containers/$files"
-done
-for files in "${IG_USER_CONTAINS[@]}"
-    do tmutil isexcluded "~/Library/Containers/$files"
-done
-
-for files in "${IG_USER[@]}"
-    do sudo tmutil $ACTION -p "~/$files"
-done
-for files in "${IG_USER[@]}"
-    do tmutil isexcluded "~/$files"
-done
-
-for files in "${IG_USER_APPS[@]}"
-    do sudo tmutil $ACTION -p "/Applications/$files.app" && sudo tmutil $ACTION -p "/Applications/$files.appdownload"
+   do set "$@" ~/Library/Containers/$files
 done
 for files in "${IG_USER_APPS[@]}"
-    # echo "/Applications/$files.app"
-    do tmutil isexcluded "/Applications/${files}.app"
+    do set "$@" /Applications/$files.app && set "$@" /Applications/$files.appdownload
 done
 
-sudo tmutil $ACTION -p "`go env GOMODCACHE`" "`go env GOCACHE`"
-tmutil isexcluded "`go env GOMODCACHE`" "`go env GOCACHE`"
+set "$@" `go env GOMODCACHE`
+set "$@" `go env GOCACHE`
+
+
+n=0
+sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist
+sudo /usr/libexec/PlistBuddy -c "Add SkipPaths array" /Library/Preferences/com.apple.TimeMachine.plist
+# echo $1
+#  && [ -e "$1" ]
+while [[ $# != 0 ]]; do
+    [[ -n "$1" ]] && {
+        sudo /usr/libexec/PlistBuddy -c "Add SkipPaths:$n string '$1'" /Library/Preferences/com.apple.TimeMachine.plist || exit
+        sudo tmutil addexclusion -p "$1"
+        tmutil isexcluded "$1"
+        ((n++))
+    }
+    shift
+done
+killall cfprefsd;:
+
+# sudo tmutil $ACTION -p "`go env GOMODCACHE`" "`go env GOCACHE`"
+# tmutil isexcluded "`go env GOMODCACHE`" "`go env GOCACHE`"
 green ✅ $0
+defaults read /Library/Preferences/com.apple.TimeMachine SkipPaths
+# { set +x; } 2>/dev/null
+
+# IFS=$'\n'
+# set "$@" ~/git # store on github/etc :)
+# set "$@" ~/Applications # store on github/etc :)
+
+# echo "1" $1
+# n=0
+# sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist
+# sudo /usr/libexec/PlistBuddy -c "Add SkipPaths array" /Library/Preferences/com.apple.TimeMachine.plist
+# echo $1
+# while [[ $# != 0 ]]; do
+#     [[ -n "$1" ]] && [ -e "$1" ] && {
+#         # sudo /usr/libexec/PlistBuddy -c "Add SkipPaths:$n string '$1'" /Library/Preferences/com.apple.TimeMachine.plist || exit
+#         # sudo tmutil addexclusion "$1"
+#         tmutil isexcluded "$1"
+#         ((n++))
+#     }
+#     shift
+# done
+# killall cfprefsd;:
+
+# sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist
+# sudo /usr/libexec/PlistBuddy -c "Add SkipPaths array" /Library/Preferences/com.apple.TimeMachine.plist
+# for files in "${IG_USER_CONTAINS[@]}"
+#     do sudo tmutil $ACTION -p "~/Library/Containers/$files"
+# done
+# for files in "${IG_USER_CONTAINS[@]}"
+#     do tmutil isexcluded "~/Library/Containers/$files"
+# done
+
+# for files in "${IG_USER[@]}"
+#     do sudo tmutil $ACTION -p "~/$files"
+# done
+# for files in "${IG_USER[@]}"
+#     do tmutil isexcluded "~/$files"
+# done
+
+# for files in "${IG_USER_APPS[@]}"
+#     do sudo tmutil $ACTION -p "/Applications/$files.app" && sudo tmutil $ACTION -p "/Applications/$files.appdownload"
+# done
+# for files in "${IG_USER_APPS[@]}"
+#     # echo "/Applications/$files.app"
+#     do tmutil isexcluded "/Applications/${files}.app"
+# done
