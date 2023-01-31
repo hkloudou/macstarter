@@ -115,9 +115,10 @@ sudo /usr/libexec/PlistBuddy -c "Add SkipPaths array" /Library/Preferences/com.a
 #  && [ -e "$1" ]
 while [[ $# != 0 ]]; do
     [[ -n "$1" ]] && {
+        # echo $1
         sudo /usr/libexec/PlistBuddy -c "Add SkipPaths:$n string '$1'" /Library/Preferences/com.apple.TimeMachine.plist || exit
         sudo tmutil addexclusion -p "$1"
-        tmutil isexcluded "$1"
+        # tmutil isexcluded "$1"
         ((n++))
     }
     shift
@@ -128,48 +129,3 @@ killall cfprefsd;:
 # tmutil isexcluded "`go env GOMODCACHE`" "`go env GOCACHE`"
 green ✅ $0
 defaults read /Library/Preferences/com.apple.TimeMachine SkipPaths
-# { set +x; } 2>/dev/null
-
-# IFS=$'\n'
-# set "$@" ~/git # store on github/etc :)
-# set "$@" ~/Applications # store on github/etc :)
-
-# echo "1" $1
-# n=0
-# sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist
-# sudo /usr/libexec/PlistBuddy -c "Add SkipPaths array" /Library/Preferences/com.apple.TimeMachine.plist
-# echo $1
-# while [[ $# != 0 ]]; do
-#     [[ -n "$1" ]] && [ -e "$1" ] && {
-#         # sudo /usr/libexec/PlistBuddy -c "Add SkipPaths:$n string '$1'" /Library/Preferences/com.apple.TimeMachine.plist || exit
-#         # sudo tmutil addexclusion "$1"
-#         tmutil isexcluded "$1"
-#         ((n++))
-#     }
-#     shift
-# done
-# killall cfprefsd;:
-
-# sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist
-# sudo /usr/libexec/PlistBuddy -c "Add SkipPaths array" /Library/Preferences/com.apple.TimeMachine.plist
-# for files in "${IG_USER_CONTAINS[@]}"
-#     do sudo tmutil $ACTION -p "~/Library/Containers/$files"
-# done
-# for files in "${IG_USER_CONTAINS[@]}"
-#     do tmutil isexcluded "~/Library/Containers/$files"
-# done
-
-# for files in "${IG_USER[@]}"
-#     do sudo tmutil $ACTION -p "~/$files"
-# done
-# for files in "${IG_USER[@]}"
-#     do tmutil isexcluded "~/$files"
-# done
-
-# for files in "${IG_USER_APPS[@]}"
-#     do sudo tmutil $ACTION -p "/Applications/$files.app" && sudo tmutil $ACTION -p "/Applications/$files.appdownload"
-# done
-# for files in "${IG_USER_APPS[@]}"
-#     # echo "/Applications/$files.app"
-#     do tmutil isexcluded "/Applications/${files}.app"
-# done
