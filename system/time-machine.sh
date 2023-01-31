@@ -64,6 +64,8 @@ set "$@" ~/Library/Application\ Support/com.apple.mobileAssetDesktop #壁纸
 set "$@" ~/Library/Application\ Support/Steam #这玩意，真的可以不要
 set "$@" ~/Library/Application\ Support/Code #Code，自己通过自动同步来搞吧
 
+set "$@" /usr/local/go      #常见程序，无缓存必要
+
 IG_USER_CONTAINS=(
     "9AD17523-F3E4-423A-A5CF-077998D376BF"  #百度HD
     "CA3EE929-B1F9-475A-8512-3E6AAFD5179C"  #抖音
