@@ -30,11 +30,11 @@ IG_USER=(
     ".pub-cache"
     ".gradle"
 
+    "Developments"
     "Downloads"
+    "Pictures"
     "Music"
     "Movies"
-    "Pictures"
-    "Developments"
     
 
     "Library/Android"
@@ -78,22 +78,7 @@ IG_USER_APPS=(
     "百度网盘HD"
     "QQLive"
 )
-# 9AD17523-F3E4-423A-A5CF-077998D376BF 百度HD
-# com.tencent.tenvideo腾讯视频 com.iqiyi.player爱奇艺
-# echo $IG_CACHE_CONTAIN
 
-# IG_CACHE_APP=(
-#     "$CT1/com.apple.Safari/Data/Library/Caches"
-#     "$U/Library/Caches/com.apple.dt.Xcode"
-# )
-# IG_CACHE=(${IG_CACHE_DEV[@]} ${IG_CACHE_APP[@]})
-# echo "IG_CACHE"
-# echo ${IG_CACHE[@]}
-# echo $IG_SYSTEM $IG_APP $IG_CACHE $IG_Containners "`go env GOMODCACHE`" "`go env GOCACHE`"
-
-# for files in ${IG_CACHE_CONTAIN[@]}
-#     do sudo tmutil addexclusion -p $CT1/$files
-# done
 for files in ${IG_USER_CONTAINS[@]}
     do sudo tmutil addexclusion -p ~/Library/Containers/$files
 done
