@@ -35,8 +35,8 @@ set "$@" $(find ~ -name "Google *" -mindepth 1 -maxdepth 1) # Google Drive
 # set "$@" ~/git # store on github/etc :)
 # set "$@" ~/node_modules
 
-
-set "$@" ~/Library/Application\ Support ~/Library/Caches ~/Library/Containers ~/Library/Google ~/Library/Internet\ Plug-Ins ~/Library/LaunchAgents ~/Library/Logs ~/Library/Mail ~/Library/Messages ~/Library/Mail ~/Library/Metadata ~/Library/QuickLook ~/Library/Safari ~/Library/Saved\ Application\ State ~/Library/Screen\ Savers ~/Library/Sharing ~/Library/Suggestions
+#~/Library/Application\ Support ~/Library/Caches ~/Library/Containers 
+set "$@" ~/Library/Google ~/Library/Internet\ Plug-Ins ~/Library/LaunchAgents ~/Library/Logs ~/Library/Mail ~/Library/Messages ~/Library/Mail ~/Library/Metadata ~/Library/QuickLook ~/Library/Safari ~/Library/Saved\ Application\ State ~/Library/Screen\ Savers ~/Library/Sharing ~/Library/Suggestions
 
 # 系统
 set "$@" /opt # MacPorts
