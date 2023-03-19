@@ -46,7 +46,7 @@ set "$@" /private/var/db/oah /private/var/db/diagnostics /private/var/db/folders
 
 
 set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle
-set "$@" ~/Developments ~/Desktop ~/Downloads ~/Movies ~/Music ~/Pictures
+set "$@" ~/Developments/flutter ~/Desktop ~/Downloads ~/Movies ~/Music ~/Pictures
 set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
 
 set "$@" ~/Library/Caches
