@@ -42,3 +42,14 @@ write_bash_profile() {
         fi
     done
 }
+
+clean_bash_profile_line() {
+    for pt in ~/.zprofile ~/.profile ~/.bash_profile; do
+        if test -r $pt; then
+            (
+                (grep -v "^$1" $pt) > $pt.bak && mv $pt.bak $pt;
+            )
+        fi
+    done
+}
+# grep -v '^xx' input.txt > output.txt
