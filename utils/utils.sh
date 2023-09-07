@@ -43,7 +43,7 @@ write_bash_profile() {
     done
 }
 
-clean_bash_profile_line() {
+clean_start_bash_profile() {
     for pt in ~/.zprofile ~/.profile ~/.bash_profile; do
         if test -r $pt; then
             (
