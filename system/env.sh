@@ -26,6 +26,13 @@ write_bash_profile "export NO_PROXY=localhost,127.0.0.1,::1,*.local,*.local."
 clean_start_bash_profile "export cleanS="
 clean_start_bash_profile "alias cleanS="
 write_bash_profile "alias cleanS='rm -rf ~/Library/Caches/go-build ~/Library/Caches/gopls'"
+clean_start_bash_profile "alias cleanFlutter="
+write_bash_profile "alias cleanFlutter='find ~/Developments/zz ~/Developments/dashu -type f -name pubspec.yaml -execdir flutter clean \;'"
+
+clean_start_bash_profile "alias cleanNpm="
+write_bash_profile "alias cleanNpm='find ~/Developments -name "node_modules" -type d -exec rm -rf {} \;'"
+
+
 # networksetup -setproxybypassdomains WI-FI $IGNOE
 # clean_bash_profile_line "export NO_PROXY="
 # write_bash_profile "export NO_PROXY=2.2.2.2,localhost,127.0.0.1,::1,*.local"

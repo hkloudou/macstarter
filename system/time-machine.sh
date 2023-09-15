@@ -142,6 +142,7 @@ done
 set "$@" `go env GOMODCACHE`
 set "$@" `go env GOCACHE`
 
+set "$@" `find ~/Developments -name "node_modules" -type d`
 
 n=0
 sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist
@@ -166,3 +167,4 @@ green ✅ $0
 defaults read /Library/Preferences/com.apple.TimeMachine SkipPaths
 
 # du -d 1 -h | sort -rh
+
