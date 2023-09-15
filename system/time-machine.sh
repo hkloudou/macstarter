@@ -45,7 +45,7 @@ set "$@" /vm  # swapfile
 set "$@" /private/var/db/oah /private/var/db/diagnostics /private/var/db/folders /private/var/db/uuidtext /private/var/db/vm /private/var/log /private/var/tmp
 
 
-set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle
+set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle ~/.vscode/extensions
 set "$@" ~/Developments/flutter ~/Desktop ~/Downloads ~/Movies ~/Music ~/Pictures
 set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
 
@@ -66,10 +66,12 @@ set "$@" ~/Library/Application\ Support/Code #Code，自己通过自动同步来
 
 set "$@" /usr/local/go      #常见程序，无缓存必要
 
+set "$@" ~/g      #常见程序，无缓存必要
+
 IG_USER_CONTAINS=(
     "9AD17523-F3E4-423A-A5CF-077998D376BF"  #百度HD
-    "CA3EE929-B1F9-475A-8512-3E6AAFD5179C"  #抖音
-    "E4F2145C-B533-453F-AD53-4413C1B7A075"  #米家
+    "CA3EE929-B1F9-475A-8512-3E6AAFD5179C"  #抖音IOS
+    "E4F2145C-B533-453F-AD53-4413C1B7A075"  #米家IOS
     "B4218C8E-9814-4464-8DE1-C459962CF285"  #携程
     "BE48479C-3CD1-4B39-B113-02079B4332F6"  #微信听书
     "8F90E7B0-EB41-461B-98C7-978522FB8EEE"  #微信读书
@@ -90,6 +92,10 @@ IG_USER_CONTAINS=(
     "com.apple.Music.MusicStorageExtension"
 
     "com.apple.Safari/Data/Library/Caches"  #safari cache
+
+    "com.tencent.LemonLite" #柠檬清理
+    "88L2Q4487U.com.tencent.LemonASMonitor" #柠檬清理
+
 )
 IG_USER_APPS=(
     #手工安装    
