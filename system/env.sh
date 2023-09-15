@@ -32,6 +32,10 @@ write_bash_profile "alias cleanFlutter='find ~/Developments/zz ~/Developments/da
 clean_start_bash_profile "alias cleanNpm="
 write_bash_profile "alias cleanNpm='find ~/Developments -name "node_modules" -type d -exec rm -rf {} \;'"
 
+clean_start_bash_profile "alias tmignore="
+write_bash_profile "alias tmignore='sh ~/Developments/hkloudou/macstarter/system/time-machine.sh'"
+
+
 
 # networksetup -setproxybypassdomains WI-FI $IGNOE
 # clean_bash_profile_line "export NO_PROXY="
