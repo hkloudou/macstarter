@@ -27,7 +27,7 @@ clean_start_bash_profile "export cleanS="
 clean_start_bash_profile "alias cleanS="
 write_bash_profile "alias cleanS='rm -rf ~/Library/Caches/go-build ~/Library/Caches/gopls'"
 clean_start_bash_profile "alias cleanFlutter="
-write_bash_profile "alias cleanFlutter='find ~/Developments/zz ~/Developments/dashu -type f -name pubspec.yaml -execdir flutter clean \;'"
+write_bash_profile "alias cleanFlutter='find ~/Developments \( -path ~/Developments/flutter -prune \) -o \( -type f -name pubspec.yaml -execdir flutter clean \; \)'"
 
 clean_start_bash_profile "alias cleanNpm="
 write_bash_profile "alias cleanNpm='find ~/Developments -name "node_modules" -type d -exec rm -rf {} \;'"
