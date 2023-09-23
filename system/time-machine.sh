@@ -50,23 +50,21 @@ set "$@" ~/Developments/flutter ~/Desktop ~/Downloads ~/Movies ~/Music ~/Picture
 set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
 
 set "$@" ~/Library/Caches
-set "$@" ~/Library/Application\ Support/Caches
-set "$@" ~/Library/Application\ Support/listen1
-
-set "$@" ~/Library/Group\ Containers/5A4RE8SF68.com.tencent.xinWeChat/Library/Caches    #微信小程序缓存
-set "$@" ~/Library/Group\ Containers/6N38VWS5BX.ru.keepcoder.Telegram ~/Library/Group\ Containers/6N38VWS5BX.ru.keepcoder.Telegram.TelegramShare    #telegram
-set "$@" ~/Library/Group\ Containers/243LU875E5.groups.com.apple.podcasts               #podcasts
-
 
 # set "$@" ~/Library/Containers/com.tencent.WeWorkMac    #企业微信，貌似没有备份的必要性
-
-set "$@" ~/Library/Application\ Support/com.apple.mobileAssetDesktop #壁纸
-set "$@" ~/Library/Application\ Support/Steam #这玩意，真的可以不要
-set "$@" ~/Library/Application\ Support/Code #Code，自己通过自动同步来搞吧
 
 set "$@" /usr/local/go      #常见程序，无缓存必要
 
 set "$@" ~/g      #常见程序，无缓存必要
+
+IG_APPLICATION_SUPPORT=(
+    "Caches"    #缓存  
+    "listen1"   #listen1
+    "com.apple.mobileAssetDesktop"  #壁纸
+    "Steam" #这玩意，真的可以不要
+    "Code" #Code，自己通过自动同步来搞吧
+    "Code - Insiders"   #Code 的未来版本
+)
 
 IG_USER_CONTAINS=(
     "9AD17523-F3E4-423A-A5CF-077998D376BF"  #百度HD
@@ -97,6 +95,15 @@ IG_USER_CONTAINS=(
     "88L2Q4487U.com.tencent.LemonASMonitor" #柠檬清理
 
 )
+
+IG_USER_GROUP_CONTAINS=(
+    "6N38VWS5BX.ru.keepcoder.Telegram" #tg
+    "6N38VWS5BX.ru.keepcoder.Telegram.TelegramShare" #tg2
+    "88L2Q4487U.WeWorkMac" #企业微信
+    "243LU875E5.groups.com.apple.podcasts"  #podcasts
+    "5A4RE8SF68.com.tencent.xinWeChat/Library/Caches"
+)
+
 IG_USER_APPS=(
     #手工安装    
     "Docker"
@@ -128,15 +135,23 @@ IG_USER_APPS=(
     "微信听书"
     "微信读书"
 )
-# # IG=("")
-# for files in "${IG_USER[@]}"
-#     do set "$@" ~/$files
-# done
+
+#Application Support
+for files in "${IG_APPLICATION_SUPPORT[@]}"
+   do set "$@" ~/Library/Application\ Support/$files
+done
+
+#Containers
+for files in "${IG_USER_GROUP_CONTAINS[@]}"
+   do set "$@" ~/Library/Group\ Containers/$files
+done
 for files in "${IG_USER_CONTAINS[@]}"
    do set "$@" ~/Library/Containers/$files
 done
+
+#Applications
 for files in "${IG_USER_APPS[@]}"
-    do set "$@" /Applications/$files.app && set "$@" /Applications/$files.appdownload
+    do set "$@" "/Applications/$files.app" && set "$@" "/Applications/$files.appdownload"
 done
 
 set "$@" `go env GOMODCACHE`
