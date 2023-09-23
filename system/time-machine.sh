@@ -43,19 +43,20 @@ set "$@" /opt # MacPorts
 set "$@" /vm  # swapfile
 
 set "$@" /private/var/db/oah /private/var/db/diagnostics /private/var/db/folders /private/var/db/uuidtext /private/var/db/vm /private/var/log /private/var/tmp
-
-
-set "$@" ~/.Trash ~/.cache ~/.npm ~/.node-gpy ~/.dartserver ~/.pub-cache ~/.gradle ~/.vscode/extensions
-set "$@" ~/Developments/flutter ~/Desktop ~/Downloads ~/Movies ~/Music ~/Pictures
-set "$@" /Library/Developer ~/Library/Developer /Library/Java ~/Library/Android
-
-set "$@" ~/Library/Caches
-
 # set "$@" ~/Library/Containers/com.tencent.WeWorkMac    #企业微信，貌似没有备份的必要性
 
 set "$@" /usr/local/go      #常见程序，无缓存必要
 
-set "$@" ~/g      #常见程序，无缓存必要
+IG_USER=(
+    g #常见程序，无缓存必要
+    .Trash
+    .cache .npm .node-gpy
+    .dartserver .pub-cache .dart-tool .dart
+    .gradle .android
+    .vscode
+    Library/Android Library/Caches Library/Developer Library/Jave
+    Desktop Downloads Movies Music Pictures Developments/flutter
+)
 
 IG_APPLICATION_SUPPORT=(
     "Caches"    #缓存  
@@ -135,6 +136,12 @@ IG_USER_APPS=(
     "微信听书"
     "微信读书"
 )
+
+#User
+for files in "${IG_USER[@]}"
+   do set "$@" ~/$files
+done
+
 
 #Application Support
 for files in "${IG_APPLICATION_SUPPORT[@]}"
