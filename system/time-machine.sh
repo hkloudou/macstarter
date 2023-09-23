@@ -154,12 +154,13 @@ for files in "${IG_USER_APPS[@]}"
     do set "$@" "/Applications/$files.app" && set "$@" "/Applications/$files.appdownload"
 done
 
+# golang
 set "$@" `go env GOMODCACHE`
 set "$@" `go env GOCACHE`
 
-# Search all node_modules and exclude
+# node_modules
 set "$@" `find ~/Developments -name "node_modules" -type d -prune`
-# Search all flutter project and exclude build folder
+# flutter build folder
 set "$@" `find ~/Developments -path ~/Developments/flutter -prune -o -name "pubspec.yaml" -type f -exec dirname {} \; | while read dir; do echo "$dir/build"; done`
 
 n=0
