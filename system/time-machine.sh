@@ -31,7 +31,7 @@ source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 #     ACTION=removeexclusion
 #     yellow ⚠️ 删除
 # 
-set "$@" $(find ~ -name "Google *" -mindepth 1 -maxdepth 1) # Google Drive
+# set "$@" $(find ~ -name "Google *" -mindepth 1 -maxdepth 1) # Google Drive
 # set "$@" ~/git # store on github/etc :)
 # set "$@" ~/node_modules
 
@@ -156,19 +156,46 @@ for files in "${IG_USER_CONTAINS[@]}"
    do set "$@" ~/Library/Containers/$files
 done
 
-#Applications
+# #Applications
 for files in "${IG_USER_APPS[@]}"
     do set "$@" "/Applications/$files.app" && set "$@" "/Applications/$files.appdownload"
 done
 
-# golang
+# # golang
 set "$@" `go env GOMODCACHE`
 set "$@" `go env GOCACHE`
 
-# node_modules
+# # node_modules
 set "$@" `find ~/Developments -name "node_modules" -type d -prune`
-# flutter build folder
+# # flutter build folder
 set "$@" `find ~/Developments -path ~/Developments/flutter -prune -o -name "pubspec.yaml" -type f -exec dirname {} \; | while read dir; do echo "$dir/build"; done`
+
+# 在当前目录开始搜索 .tmignore 文件
+# 定义一个数组来存储所有找到的路径
+# ppaths=()
+
+while IFS= read -r file; do
+    # 获取文件的目录名
+    dir_name=$(dirname "$file")
+
+    # 读取文件中的每一行
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        # 去除前后空白字符
+        trimmed_line=$(echo "$line" | awk '{$1=$1};1')
+
+        # 检查行是否为空或以#开头
+        if [[ -z "$trimmed_line" ]] || [[ "$trimmed_line" =~ ^# ]]; then
+            continue
+        fi
+        # 检查指定路径是否存在
+        if [[ -e "$dir_name/$trimmed_line" ]]; then
+            echo "$dir_name/$trimmed_line"
+            set "$@" "$dir_name/$trimmed_line"
+        else
+            echo "Warning: $dir_name/$trimmed_line not found!"
+        fi
+    done < "$file"
+done < <(find ~/Developments -name ".tmignore")
 
 n=0
 sudo /usr/libexec/PlistBuddy -c "Delete SkipPaths" /Library/Preferences/com.apple.TimeMachine.plist

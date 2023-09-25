@@ -33,7 +33,7 @@ clean_start_bash_profile "alias cleanNpm="
 write_bash_profile "alias cleanNpm='find ~/Developments -name "node_modules" -type d -exec rm -rf {} \;'"
 
 clean_start_bash_profile "alias tmignore="
-write_bash_profile "alias tmignore='sh ~/Developments/hkloudou/macstarter/system/time-machine.sh'"
+write_bash_profile "alias tmignore='bash ~/Developments/hkloudou/macstarter/system/time-machine.sh'"
 
 
 
