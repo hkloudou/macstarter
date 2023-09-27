@@ -74,6 +74,7 @@ IG_USER_CONTAINS=(
     "B4218C8E-9814-4464-8DE1-C459962CF285"  #携程
     "BE48479C-3CD1-4B39-B113-02079B4332F6"  #微信听书
     "8F90E7B0-EB41-461B-98C7-978522FB8EEE"  #微信读书
+    "5C64EC52-1E37-4282-9289-E8113D4F708A"  #百度HD
     "com.tencent.wwmapp"                    #腾讯会议
     "com.tencent.tenvideo"                  #腾讯视频
     "com.iqiyi.player"                      #爱奇艺
@@ -126,6 +127,7 @@ IG_USER_APPS=(
     "QQLive"
     "WeChat"
     "企业微信"
+    "aDrive"
 
     #IOS
     "抖音"
