@@ -65,6 +65,9 @@ IG_APPLICATION_SUPPORT=(
     "Steam" #这玩意，真的可以不要
     "Code" #Code，自己通过自动同步来搞吧
     "Code - Insiders"   #Code 的未来版本
+    "aDrive"        #阿里云盘，没必要缓存
+    "Knowledge"     #Knowledge siri的application主动学习功能
+    "com.apple.AMPArtworkAgent" #apple music 艺术封面
 )
 
 IG_USER_CONTAINS=(
@@ -104,6 +107,7 @@ IG_USER_GROUP_CONTAINS=(
     "88L2Q4487U.WeWorkMac" #企业微信
     "243LU875E5.groups.com.apple.podcasts"  #podcasts
     "5A4RE8SF68.com.tencent.xinWeChat/Library/Caches"
+    "group.com.apple.tips"  #tips
 )
 
 IG_USER_APPS=(
