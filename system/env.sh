@@ -35,7 +35,8 @@ write_bash_profile "alias cleanNpm='find ~/Developments -name "node_modules" -ty
 clean_start_bash_profile "alias tmignore="
 write_bash_profile "alias tmignore='bash ~/Developments/hkloudou/macstarter/system/time-machine.sh'"
 
-
+clean_start_bash_profile "alias tmcompare="
+write_bash_profile "alias tmcompare='tmutil compare | grep '^[\!+]' | sort -h -k 2'"
 
 # networksetup -setproxybypassdomains WI-FI $IGNOE
 # clean_bash_profile_line "export NO_PROXY="
