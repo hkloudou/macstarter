@@ -121,6 +121,8 @@ IG_USER_APPS=(
     #手工安装    
     "Docker"
     "Visual Studio Code"
+    "Code - Insiders"
+    "isual Studio Code - Insiders"
     "BaiduNetdisk_mac"
     
     #系统轻易下载到
