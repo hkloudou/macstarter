@@ -99,6 +99,8 @@ IG_USER_CONTAINS=(
     "com.tencent.LemonLite" #柠檬清理
     "88L2Q4487U.com.tencent.LemonASMonitor" #柠檬清理
 
+    "com.youku.mac" #优酷
+
 )
 
 IG_USER_GROUP_CONTAINS=(
@@ -128,6 +130,7 @@ IG_USER_APPS=(
 
     #应用轻易下载到
     "爱奇艺"
+    "优酷"
     "QQLive"
     "WeChat"
     "企业微信"
@@ -141,6 +144,7 @@ IG_USER_APPS=(
     "携程旅行"
     "微信听书"
     "微信读书"
+    
 )
 
 #User
