@@ -55,6 +55,7 @@ IG_USER=(
     .gradle .android
     .vscode
     Library/Android Library/Caches Library/Developer Library/Jave
+    Library/Weather #天气要着没用吧
     Desktop Downloads Movies Music Pictures Developments/flutter
 )
 
@@ -68,6 +69,7 @@ IG_APPLICATION_SUPPORT=(
     "aDrive"        #阿里云盘，没必要缓存
     "Knowledge"     #Knowledge siri的application主动学习功能
     "com.apple.AMPArtworkAgent" #apple music 艺术封面
+    "Google" #google
 )
 
 IG_USER_CONTAINS=(
@@ -93,7 +95,8 @@ IG_USER_CONTAINS=(
     "com.apple.podcasts.PodcastsNotificationExtension"
     "com.apple.Music.MusicCacheExtension"
     "com.apple.Music.MusicStorageExtension"
-
+    "com.apple.weather" #天气
+    "com.apple.weather.WeatherIntents" #天气2
     "com.apple.Safari/Data/Library/Caches"  #safari cache
 
     "com.tencent.LemonLite" #柠檬清理
@@ -110,6 +113,8 @@ IG_USER_GROUP_CONTAINS=(
     "243LU875E5.groups.com.apple.podcasts"  #podcasts
     "5A4RE8SF68.com.tencent.xinWeChat/Library/Caches"
     "group.com.apple.tips"  #tips
+    "group.com.apple.tipsnext" #tips
+    "group.com.apple.stocks" #股票
 )
 
 IG_USER_APPS=(
