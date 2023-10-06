@@ -134,6 +134,7 @@ IG_USER_APPS=(
 
     "Apifox"
     "Xmind"
+    "Google Chrome"
 
     #应用轻易下载到
     "爱奇艺"
