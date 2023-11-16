@@ -16,9 +16,11 @@ write_bash_profile "export PATH=\$PATH:/opt/homebrew/bin"
 write_bash_profile "alias p=\"export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890\""
 
 clean_start_bash_profile "alias pset="
-write_bash_profile "alias pset=\"networksetup -setwebproxy WI-FI 192.168.3.11 7890 && networksetup -setsecurewebproxy WI-FI 192.168.3.11 7890 && networksetup -setsocksfirewallproxy WI-FI 192.168.3.11 7890 && networksetup -setproxybypassdomains WI-FI $IGNOE\""
+clean_start_bash_profile "alias p2="
+write_bash_profile "alias pset=\"networksetup -setwebproxy WI-FI 192.168.3.26 7890 && networksetup -setsecurewebproxy WI-FI 192.168.3.26 7890 && networksetup -setsocksfirewallproxy WI-FI 192.168.3.26 7890 && networksetup -setproxybypassdomains WI-FI $IGNOE\""
 write_bash_profile "alias psys=\"networksetup -setwebproxystate WI-FI off && networksetup -setsecurewebproxystate WI-FI off && networksetup -setsocksfirewallproxystate WI-FI off\""
-write_bash_profile "alias p2=\"export https_proxy=http://192.168.3.11:7890 http_proxy=http://192.168.3.11:7890 all_proxy=socks5://192.168.3.11:7890\""
+write_bash_profile "alias p2=\"export https_proxy=http://192.168.3.26:7890 http_proxy=http://192.168.3.26:7890 all_proxy=socks5://192.168.3.26:7890\""
+
 
 clean_start_bash_profile "export NO_PROXY="
 write_bash_profile "export NO_PROXY=localhost,127.0.0.1,::1,*.local,*.local."
