@@ -4,7 +4,7 @@ source $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../utils/utils.sh
 # Env
 ###############################################################################
 echo "\033[32mConfig env...\033[0m"
-IGNOE="192.168.0.0/16 10.0.0.0/8 172.16.0.0/12 127.0.0.1 localhost '*.local' '*.local.' '*.crashlytics.com' '*.gitlab.me' gitlab.me"
+IGNOE="192.168.0.0/16 10.0.0.0/8 172.16.0.0/12 127.0.0.1 localhost '*.local' '*.local.' '*.crashlytics.com' '*.gitlab.me' 'gitlab.me' '*.apiatm.com'"
 
 
 write_bash_profile "export PATH=\$PATH:/Users/undefined/Developments/flutter/bin"
