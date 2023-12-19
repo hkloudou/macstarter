@@ -50,8 +50,8 @@ set "$@" /usr/local/go      #常见程序，无缓存必要
 IG_USER=(
     g #常见程序，无缓存必要
     .Trash
-    .cache .npm .node-gpy
-    .dartserver .pub-cache .dart-tool .dart
+    .cache .npm .node-gpy .gem .cocoapods
+    .dartServer .dartserver .pub-cache .dart-tool .dart
     .gradle .android
     .vscode
     Library/Android Library/Caches Library/Developer Library/Jave
@@ -70,6 +70,9 @@ IG_APPLICATION_SUPPORT=(
     "Knowledge"     #Knowledge siri的application主动学习功能
     "com.apple.AMPArtworkAgent" #apple music 艺术封面
     "Google" #google
+    "Rancher Desktop" #Rancher Desktop
+    "rancher-desktop" #rancher-desktop
+    "微信开发者工具"    #微信开发者工具
 )
 
 IG_USER_CONTAINS=(
