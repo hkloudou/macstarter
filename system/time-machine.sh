@@ -49,6 +49,7 @@ set "$@" /usr/local/go      #常见程序，无缓存必要
 
 IG_USER=(
     g #常见程序，无缓存必要
+    go
     .Trash
     .cache .npm .node-gpy .gem .cocoapods
     .dartServer .dartserver .pub-cache .dart-tool .dart
