@@ -54,6 +54,7 @@ IG_USER=(
     .dartServer .dartserver .pub-cache .dart-tool .dart
     .gradle .android
     .vscode
+    .rustup .cargo
     Library/Android Library/Caches Library/Developer Library/Jave
     Library/Weather #天气要着没用吧
     Desktop Downloads Movies Music Pictures Developments/flutter
