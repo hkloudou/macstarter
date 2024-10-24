@@ -75,6 +75,7 @@ IG_APPLICATION_SUPPORT=(
     "Rancher Desktop" #Rancher Desktop
     "rancher-desktop" #rancher-desktop
     "微信开发者工具"    #微信开发者工具
+    "VooV Meeting.app" #Voov Meeting
 )
 
 IG_USER_CONTAINS=(
@@ -85,6 +86,7 @@ IG_USER_CONTAINS=(
     "BE48479C-3CD1-4B39-B113-02079B4332F6"  #微信听书
     "8F90E7B0-EB41-461B-98C7-978522FB8EEE"  #微信读书
     "5C64EC52-1E37-4282-9289-E8113D4F708A"  #百度HD
+    "A21D8646-172F-4796-8F73-0484906FD2EE"  #百度HD
     "com.tencent.wwmapp"                    #腾讯会议
     "com.tencent.tenvideo"                  #腾讯视频
     "com.iqiyi.player"                      #爱奇艺
@@ -191,8 +193,8 @@ set "$@" `go env GOCACHE`
 # # node_modules
 set "$@" `find ~/Developments -name "node_modules" -type d -prune`
 # # flutter build folder
-set "$@" `find ~/Developments -path ~/Developments/flutter -prune -o -name "pubspec.yaml" -type f -exec dirname {} \; | while read dir; do echo "$dir/build"; done`
-
+# set "$@" `find ~/Developments -path ~/Developments/flutter -prune -o -name "pubspec.yaml" -type f -exec dirname {} \; | while read dir; do echo "$dir/build"; done`
+set "$@" $(find ~/Developments -path ~/Developments/flutter -prune -o -name "pubspec.yaml" -type f -exec dirname {} \; | while read dir; do echo "$dir/build"; echo "$dir/.dart_tool"; done)
 # 在当前目录开始搜索 .tmignore 文件
 # 定义一个数组来存储所有找到的路径
 # ppaths=()
