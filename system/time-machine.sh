@@ -75,7 +75,6 @@ IG_APPLICATION_SUPPORT=(
     "Rancher Desktop" #Rancher Desktop
     "rancher-desktop" #rancher-desktop
     "微信开发者工具"    #微信开发者工具
-    "VooV Meeting.app" #Voov Meeting
 )
 
 IG_USER_CONTAINS=(
@@ -150,6 +149,7 @@ IG_USER_APPS=(
     "WeChat"
     "企业微信"
     "aDrive"
+    "VooV Meeting"
 
     #IOS
     "抖音"
