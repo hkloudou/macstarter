@@ -149,6 +149,7 @@ IG_USER_APPS=(
     "Apifox"
     "Xmind"
     "Google Chrome"
+    "ChatGPT"
 
     #IOS
     "抖音"
