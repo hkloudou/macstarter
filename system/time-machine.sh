@@ -133,14 +133,9 @@ IG_USER_APPS=(
     
     #系统轻易下载到
     "Xcode"
-
     "Keynote"
     "Pages"
     "Numbers"
-
-    "Apifox"
-    "Xmind"
-    "Google Chrome"
 
     #应用轻易下载到
     "爱奇艺"
@@ -150,6 +145,10 @@ IG_USER_APPS=(
     "企业微信"
     "aDrive"
     "VooV Meeting"
+    "ToDesk"
+    "Apifox"
+    "Xmind"
+    "Google Chrome"
 
     #IOS
     "抖音"
