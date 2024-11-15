@@ -88,6 +88,7 @@ IG_USER_CONTAINS=(
     "A21D8646-172F-4796-8F73-0484906FD2EE"  #百度HD
     "com.tencent.wwmapp"                    #腾讯会议
     "com.tencent.tenvideo"                  #腾讯视频
+    "com.netease.163music"                  #网易音乐
     "com.iqiyi.player"                      #爱奇艺
     "com.docker.docker"                     #docker
     "ru.keepcoder.Telegram"                 #telegram
@@ -140,6 +141,7 @@ IG_USER_APPS=(
     #应用轻易下载到
     "爱奇艺"
     "优酷"
+    "NeteaseMusic"
     "QQLive"
     "WeChat"
     "企业微信"
