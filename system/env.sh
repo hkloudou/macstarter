@@ -8,10 +8,10 @@ IGNOE="192.168.0.0/16 10.0.0.0/8 172.16.0.0/12 127.0.0.1 localhost '*.local' '*.
 
 
 # path
-write_bash_profile "export PATH=\$PATH:/Users/undefined/Library/Python/3.9/bin"
-write_bash_profile "export PATH=\$PATH:/Users/undefined/go/bin"
+# write_bash_profile "export PATH=\$PATH:/Users/undefined/Library/Python/3.9/bin"
+# write_bash_profile "export PATH=\$PATH:/Users/undefined/go/bin"
 write_bash_profile "export PATH=\$PATH:/opt/homebrew/bin"
- 
+
 #flutter
 write_bash_profile "export PUB_HOSTED_URL=\"https://pub.flutter-io.cn\""
 write_bash_profile "export FLUTTER_STORAGE_BASE_URL=\"https://storage.flutter-io.cn\""
@@ -19,12 +19,13 @@ write_bash_profile "export PATH=\$PATH:/Users/undefined/Developments/flutter/bin
 
 
 write_bash_profile "alias p=\"export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890\""
+write_bash_profile "alias pmotion=\"export https_proxy=http://127.0.0.1:18001 http_proxy=http://127.0.0.1:18001 all_proxy=socks5://127.0.0.1:18001\""
 
 clean_start_bash_profile "alias pset="
 clean_start_bash_profile "alias p2="
-write_bash_profile "alias pset=\"networksetup -setwebproxy WI-FI 192.168.3.26 7890 && networksetup -setsecurewebproxy WI-FI 192.168.3.26 7890 && networksetup -setsocksfirewallproxy WI-FI 192.168.3.26 7890 && networksetup -setproxybypassdomains WI-FI $IGNOE\""
-write_bash_profile "alias psys=\"networksetup -setwebproxystate WI-FI off && networksetup -setsecurewebproxystate WI-FI off && networksetup -setsocksfirewallproxystate WI-FI off\""
-write_bash_profile "alias p2=\"export https_proxy=http://192.168.3.26:7890 http_proxy=http://192.168.3.26:7890 all_proxy=socks5://192.168.3.26:7890\""
+# write_bash_profile "alias pset=\"networksetup -setwebproxy WI-FI 192.168.3.26 7890 && networksetup -setsecurewebproxy WI-FI 192.168.3.26 7890 && networksetup -setsocksfirewallproxy WI-FI 192.168.3.26 7890 && networksetup -setproxybypassdomains WI-FI $IGNOE\""
+# write_bash_profile "alias psys=\"networksetup -setwebproxystate WI-FI off && networksetup -setsecurewebproxystate WI-FI off && networksetup -setsocksfirewallproxystate WI-FI off\""
+write_bash_profile "alias p2=\"export https_proxy=http://172.16.1.1:7890 http_proxy=http://172.16.1.1:7890 all_proxy=socks5://172.16.1.1:7890\""
 
 
 clean_start_bash_profile "export NO_PROXY="
