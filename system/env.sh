@@ -9,13 +9,13 @@ IGNOE="192.168.0.0/16 10.0.0.0/8 172.16.0.0/12 127.0.0.1 localhost '*.local' '*.
 
 # path
 # write_bash_profile "export PATH=\$PATH:/Users/undefined/Library/Python/3.9/bin"
-# write_bash_profile "export PATH=\$PATH:/Users/undefined/go/bin"
+write_bash_profile "export PATH=\$PATH:~/go/bin"
 write_bash_profile "export PATH=\$PATH:/opt/homebrew/bin"
 
 #flutter
 write_bash_profile "export PUB_HOSTED_URL=\"https://pub.flutter-io.cn\""
 write_bash_profile "export FLUTTER_STORAGE_BASE_URL=\"https://storage.flutter-io.cn\""
-write_bash_profile "export PATH=\$PATH:/Users/undefined/Developments/flutter/bin"
+write_bash_profile "export PATH=\$PATH:~/Developments/flutter/bin"
 
 
 write_bash_profile "alias p=\"export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890\""
