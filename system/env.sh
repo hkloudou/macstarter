@@ -29,11 +29,12 @@ write_bash_profile "alias p2=\"export https_proxy=http://172.16.1.1:7890 http_pr
 
 
 clean_start_bash_profile "export NO_PROXY="
-write_bash_profile "export NO_PROXY=localhost,127.0.0.1,::1,*.local,*.local."
+# write_bash_profile "export NO_PROXY=localhost,127.0.0.1,::1,*.local,*.local."
 
-clean_start_bash_profile "export cleanS="
+clean_start_bash_profile "export cleanGo="
+clean_start_bash_profile "alias cleanGo="
 clean_start_bash_profile "alias cleanS="
-write_bash_profile "alias cleanS='rm -rf ~/Library/Caches/go-build ~/Library/Caches/gopls'"
+write_bash_profile "alias cleanGo='rm -rf ~/Library/Caches/go-build ~/Library/Caches/gopls'"
 clean_start_bash_profile "alias cleanFlutter="
 write_bash_profile "alias cleanFlutter='find ~/Developments \( -path ~/Developments/flutter -prune \) -o \( -type f -name pubspec.yaml -execdir flutter clean \; \)'"
 
