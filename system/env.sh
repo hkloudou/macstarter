@@ -9,7 +9,7 @@ IGNOE="192.168.0.0/16 10.0.0.0/8 172.16.0.0/12 127.0.0.1 localhost '*.local' '*.
 
 # path
 # write_bash_profile "export PATH=\$PATH:/Users/undefined/Library/Python/3.9/bin"
-# write_bash_profile "export PATH=\$PATH:/Users/undefined/go/bin"
+write_bash_profile "export PATH=\$PATH:~/go/bin"
 write_bash_profile "export PATH=\$PATH:/opt/homebrew/bin"
 
 #flutter
